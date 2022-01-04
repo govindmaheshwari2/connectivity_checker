@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 // Project imports:
-import 'package:connectivity_wrapper/connectivity_wrapper.dart';
-import 'package:connectivity_wrapper/src/utils/constants.dart';
+import 'package:connectivity_checker/connectivity_checker.dart';
+import 'package:connectivity_checker/src/utils/constants.dart';
 
 enum PositionOnScreen {
   TOP,
@@ -96,12 +96,12 @@ class ConnectivityScreenWrapper extends StatelessWidget {
     return AbsorbPointer(
       absorbing: (disableInteraction && isOffline),
       child: Stack(
-        children: (<Widget?>[
-          if (child != null) child,
+        children: (<Widget>[
+          if (child != null) child!,
           if (disableInteraction && isOffline)
-            if (disableWidget != null) disableWidget,
+            if (disableWidget != null) disableWidget!,
           _offlineWidget,
-        ]) as List<Widget>,
+        ]),
       ),
     );
   }

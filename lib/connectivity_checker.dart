@@ -15,11 +15,11 @@ import 'dart:async';
 import 'dart:io';
 
 // Project imports:
-import 'package:connectivity_wrapper/src/utils/constants.dart';
+import 'package:connectivity_checker/src/utils/constants.dart';
 
-export 'package:connectivity_wrapper/src/widgets/connectivity_app_wrapper_widget.dart';
-export 'package:connectivity_wrapper/src/widgets/connectivity_screen_wrapper.dart';
-export 'package:connectivity_wrapper/src/widgets/connectivity_widget_wrapper.dart';
+export 'package:connectivity_checker/src/widgets/connectivity_app_wrapper_widget.dart';
+export 'package:connectivity_checker/src/widgets/connectivity_screen_wrapper.dart';
+export 'package:connectivity_checker/src/widgets/connectivity_widget_wrapper.dart';
 
 /// Connection Status Check Result
 ///

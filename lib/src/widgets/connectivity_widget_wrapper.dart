@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 // Project imports:
-import 'package:connectivity_wrapper/connectivity_wrapper.dart';
-import 'package:connectivity_wrapper/src/utils/constants.dart';
-import 'package:connectivity_wrapper/src/widgets/empty_container.dart';
+import 'package:connectivity_checker/connectivity_checker.dart';
+import 'package:connectivity_checker/src/utils/constants.dart';
+import 'package:connectivity_checker/src/widgets/empty_container.dart';
 
 class ConnectivityWidgetWrapper extends StatelessWidget {
   /// The [child] contained by the ConnectivityWidgetWrapper.
@@ -97,8 +97,8 @@ class ConnectivityWidgetWrapper extends StatelessWidget {
 
     if (stacked)
       return Stack(
-        children: (<Widget?>[
-          if (child != null) child,
+        children: (<Widget>[
+          if (child != null) child!,
           disableInteraction && _isOffline
               ? Column(
                   children: <Widget>[
@@ -114,7 +114,7 @@ class ConnectivityWidgetWrapper extends StatelessWidget {
                 )
               : EmptyContainer(),
           _isOffline ? _finalOfflineWidget : EmptyContainer(),
-        ]) as List<Widget>,
+        ]),
       );
 
     return _isOffline ? _finalOfflineWidget : child!;

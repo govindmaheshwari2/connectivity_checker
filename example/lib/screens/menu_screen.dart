@@ -1,4 +1,4 @@
-import 'package:connectivity_wrapper/connectivity_wrapper.dart';
+import 'package:connectivity_checker/connectivity_checker.dart';
 import 'package:connectivity_wrapper_example/screens/scaffold_example_screen.dart';
 import 'package:connectivity_wrapper_example/utils/strings.dart';
 import 'package:connectivity_wrapper_example/utils/utils.dart';
