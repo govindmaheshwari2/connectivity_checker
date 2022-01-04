@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/build-1.0.6-brightgreen)](https://github.com/ajaynonstopio/connectivity_wrapper)
+[![](https://img.shields.io/badge/build-1.0.0-brightgreen)](https://github.com/ajaynonstopio/connectivity_wrapper)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 # connectivity_checker
