@@ -1,6 +1,6 @@
 name: connectivity_checker
 description: A new Flutter package which provides network-aware widgets.It allows Flutter apps provide feedback on your app when it's not connected to it, or when there's no connection.
-version: 1.0.6
+version: 1.0.0
 documentation: https://github.com/govindmaheshwari2/connectivity_checker
 homepage: https://github.com/govindmaheshwari2/connectivity_checker
 
