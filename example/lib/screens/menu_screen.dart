@@ -1,7 +1,7 @@
 import 'package:connectivity_checker/connectivity_checker.dart';
-import 'package:connectivity_wrapper_example/screens/scaffold_example_screen.dart';
-import 'package:connectivity_wrapper_example/utils/strings.dart';
-import 'package:connectivity_wrapper_example/utils/utils.dart';
+import 'package:connectivity_checker_example/screens/scaffold_example_screen.dart';
+import 'package:connectivity_checker_example/utils/strings.dart';
+import 'package:connectivity_checker_example/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_offline_widget_screen.dart';
