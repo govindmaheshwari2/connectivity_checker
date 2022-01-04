@@ -1,7 +1,7 @@
 [![](https://img.shields.io/badge/build-1.0.6-brightgreen)](https://github.com/ajaynonstopio/connectivity_wrapper)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-# connectivity_wrapper
+# connectivity_checker
 
 This plugin allows Flutter apps provide feedback on your app when it's not connected to it, or when there's no connection.
 
@@ -14,14 +14,14 @@ This plugin allows Flutter apps provide feedback on your app when it's not conne
 dependencies:
   flutter:
     sdk: flutter
-  connectivity_wrapper: ^[version]
+  connectivity_checker: ^[version]
 ```
 3. click the packages get button or *flutter pub get*  
 
 ## Import the package
 
 ```dart
-import 'package:connectivity_wrapper/connectivity_wrapper.dart';
+import 'package:connectivity_checker/connectivity_checker.dart';
 ```
 
 ##Check if device is connected to internet or not 
