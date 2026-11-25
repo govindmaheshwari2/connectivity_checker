@@ -12,10 +12,15 @@ library connectivity_wrapper;
 
 // Dart imports:
 import 'dart:async';
-import 'dart:io';
 
 // Project imports:
+import 'package:connectivity_checker/src/address_check_io.dart'
+    if (dart.library.js_interop) 'package:connectivity_checker/src/address_check_web.dart';
 import 'package:connectivity_checker/src/utils/constants.dart';
+
+export 'package:connectivity_checker/src/address_check_io.dart'
+    if (dart.library.js_interop) 'package:connectivity_checker/src/address_check_web.dart'
+    show AddressCheckOptions;
 
 export 'package:connectivity_checker/src/widgets/connectivity_app_wrapper_widget.dart';
 export 'package:connectivity_checker/src/widgets/connectivity_screen_wrapper.dart';
@@ -29,25 +34,7 @@ export 'package:connectivity_checker/src/widgets/connectivity_widget_wrapper.dar
 enum ConnectivityStatus { CONNECTED, DISCONNECTED }
 
 class ConnectivityWrapper {
-  static final List<AddressCheckOptions> _defaultAddresses = List.unmodifiable([
-    AddressCheckOptions(
-      InternetAddress('1.1.1.1'),
-      port: DEFAULT_PORT,
-      timeout: DEFAULT_TIMEOUT,
-    ),
-    AddressCheckOptions(
-      InternetAddress('8.8.4.4'),
-      port: DEFAULT_PORT,
-      timeout: DEFAULT_TIMEOUT,
-    ),
-    AddressCheckOptions(
-      InternetAddress('208.67.222.222'),
-      port: DEFAULT_PORT,
-      timeout: DEFAULT_TIMEOUT,
-    ),
-  ]);
-
-  List<AddressCheckOptions> addresses = _defaultAddresses;
+  List<AddressCheckOptions> addresses = defaultAddresses;
 
   ConnectivityWrapper._() {
     _statusController.onListen = () {
@@ -64,19 +51,7 @@ class ConnectivityWrapper {
   Future<AddressCheckResult> isHostReachable(
     AddressCheckOptions options,
   ) async {
-    Socket? sock;
-    try {
-      sock = await Socket.connect(
-        options.address,
-        options.port,
-        timeout: options.timeout,
-      );
-      sock.destroy();
-      return AddressCheckResult(options, true);
-    } catch (e) {
-      sock?.destroy();
-      return AddressCheckResult(options, false);
-    }
+    return AddressCheckResult(options, await checkHost(options));
   }
 
   List<AddressCheckResult> get lastTryResults => _lastTryResults;
@@ -130,21 +105,6 @@ class ConnectivityWrapper {
   bool get isActivelyChecking => _statusController.hasListener;
 
   ConnectivityStatus? get lastStatus => _lastStatus;
-}
-
-class AddressCheckOptions {
-  final InternetAddress address;
-  final int port;
-  final Duration timeout;
-
-  AddressCheckOptions(
-    this.address, {
-    this.port = DEFAULT_PORT,
-    this.timeout = DEFAULT_TIMEOUT,
-  });
-
-  @override
-  String toString() => "AddressCheckOptions($address, $port, $timeout)";
 }
 
 class AddressCheckResult {

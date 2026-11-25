@@ -1,5 +1,5 @@
 // Flutter imports:
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 // Project imports:
 import 'package:connectivity_checker/src/widgets/connectivity_screen_wrapper.dart';
@@ -34,7 +34,7 @@ const String disconnectedMessage =
 ///default message Style
 const TextStyle defaultMessageStyle = TextStyle(
   fontSize: 15.0,
-  color: Colors.white,
+  color: Color(0xFFFFFFFF),
   inherit: false,
 );
 

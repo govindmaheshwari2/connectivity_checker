@@ -1,12 +1,11 @@
 // Flutter imports:
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 // Package imports:
 import 'package:provider/provider.dart';
 
 // Project imports:
 import 'package:connectivity_checker/connectivity_checker.dart';
-import 'package:connectivity_checker/src/providers/connectivity_provider.dart';
 
 ///[ConnectivityAppWrapper] is a StatelessWidget.
 
@@ -20,7 +19,7 @@ class ConnectivityAppWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamProvider<ConnectivityStatus>(
       initialData: ConnectivityStatus.CONNECTED,
-      create: (context) => ConnectivityProvider().connectivityStream,
+      create: (context) => ConnectivityWrapper.instance.onStatusChange,
       child: app,
     );
   }

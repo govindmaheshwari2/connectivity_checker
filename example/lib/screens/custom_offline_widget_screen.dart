@@ -1,7 +1,7 @@
 import 'package:connectivity_checker/connectivity_checker.dart';
 import 'package:connectivity_checker_example/utils/strings.dart';
 import 'package:connectivity_checker_example/utils/ui_helper.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class CustomOfflineWidgetScreen extends StatelessWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:connectivity_checker/connectivity_checker.dart';
 import 'package:connectivity_checker_example/utils/strings.dart';
 import 'package:connectivity_checker_example/utils/ui_helper.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class ScaffoldExampleScreen extends StatefulWidget {
   @override
@@ -16,9 +16,9 @@ class _ScaffoldExampleScreenState extends State<ScaffoldExampleScreen> {
   bool _customHeight = false;
   bool _customMessage = false;
 
-  Decoration _decoration;
-  double _height;
-  String _message;
+  Decoration? _decoration;
+  double? _height;
+  String? _message;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class _ScaffoldExampleScreenState extends State<ScaffoldExampleScreen> {
               value: _customDecoration,
               onChanged: (value) {
                 setState(() {
-                  _customDecoration = value;
+                  _customDecoration = value ?? false;
                   if (_customDecoration) {
                     _decoration = BoxDecoration(
                       color: Colors.purple,
@@ -66,7 +66,7 @@ class _ScaffoldExampleScreenState extends State<ScaffoldExampleScreen> {
               value: _customHeight,
               onChanged: (value) {
                 setState(() {
-                  _customHeight = value;
+                  _customHeight = value ?? false;
                   if (_customHeight) {
                     _height = 150.0;
                   } else {
@@ -82,7 +82,7 @@ class _ScaffoldExampleScreenState extends State<ScaffoldExampleScreen> {
               value: _customMessage,
               onChanged: (value) {
                 setState(() {
-                  _customMessage = value;
+                  _customMessage = value ?? false;
                   if (_customMessage) {
                     _message = Strings.offlineMessage;
                   } else {
@@ -132,7 +132,7 @@ class _ScaffoldExampleScreenState extends State<ScaffoldExampleScreen> {
               value: _disableInteraction,
               onChanged: (value) {
                 setState(() {
-                  _disableInteraction = value;
+                  _disableInteraction = value ?? false;
                 });
               },
             ),

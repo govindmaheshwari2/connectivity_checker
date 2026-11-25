@@ -5,6 +5,13 @@
 
 This plugin allows Flutter apps provide feedback on your app when it's not connected to it, or when there's no connection.
 
+## Platforms
+
+Android, iOS, macOS, Windows, Linux and Web (JS & Wasm).
+
+Native platforms check by opening a TCP socket (`AddressCheckOptions(InternetAddress, port:)`).
+Browsers can't open sockets, so on web `AddressCheckOptions(Uri)` sends a `no-cors` HTTP request instead.
+
 ## Let's get started
 
 1. Go to `pubspec.yaml` 

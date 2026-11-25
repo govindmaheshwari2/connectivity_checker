@@ -1,5 +1,5 @@
 // Flutter imports:
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 // Package imports:
 import 'package:provider/provider.dart';
@@ -85,7 +85,7 @@ class ConnectivityWidgetWrapper extends StatelessWidget {
             height: height ?? defaultHeight,
             width: MediaQuery.of(context).size.width,
             decoration: decoration ??
-                BoxDecoration(color: color ?? Colors.red.shade300),
+                BoxDecoration(color: color ?? Color(0xFFE57373)),
             child: Center(
               child: Text(
                 message ?? disconnectedMessage,
@@ -106,7 +106,7 @@ class ConnectivityWidgetWrapper extends StatelessWidget {
                       child: Container(
                         decoration: decoration ??
                             BoxDecoration(
-                              color: Colors.black38,
+                              color: Color(0x61000000),
                             ),
                       ),
                     )

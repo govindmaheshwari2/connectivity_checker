@@ -2,7 +2,7 @@ import 'package:connectivity_checker/connectivity_checker.dart';
 import 'package:connectivity_checker_example/screens/scaffold_example_screen.dart';
 import 'package:connectivity_checker_example/utils/strings.dart';
 import 'package:connectivity_checker_example/utils/utils.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'custom_offline_widget_screen.dart';
 import 'network_aware_widget_screen.dart';
@@ -20,7 +20,7 @@ class MenuScreen extends StatelessWidget {
       body: ConnectivityScreenWrapper(
         disableInteraction: true,
         disableWidget: Container(
-          color: Colors.red.withOpacity(0.3),
+          color: Colors.red.withValues(alpha: 0.3),
         ),
         child: ListView(
           children: <Widget>[

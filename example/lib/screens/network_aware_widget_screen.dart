@@ -1,8 +1,8 @@
 import 'package:connectivity_checker/connectivity_checker.dart';
 import 'package:connectivity_checker_example/utils/strings.dart';
 import 'package:connectivity_checker_example/utils/ui_helper.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
+import 'package:material_ui/material_ui.dart';
 
 class NetworkAwareWidgetScreen extends StatelessWidget {
   @override
@@ -27,7 +27,7 @@ class NetworkAwareWidgetScreen extends StatelessWidget {
             offlineWidget: ElevatedButton(
               onPressed: null,
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.grey),
+                backgroundColor: WidgetStateProperty.all<Color>(Colors.grey),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -55,7 +55,7 @@ class NetworkAwareWidgetScreen extends StatelessWidget {
                 ),
               ),
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                backgroundColor: WidgetStateProperty.all<Color>(Colors.blue),
               ),
             ),
           ),

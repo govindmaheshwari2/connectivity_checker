@@ -1,6 +1,6 @@
 import 'package:connectivity_checker/connectivity_checker.dart';
 import 'package:connectivity_checker_example/screens/menu_screen.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(MyApp());
 

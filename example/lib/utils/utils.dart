@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class AppRoutes {
   static void push(BuildContext context, Widget page) {
@@ -10,10 +10,10 @@ class AppRoutes {
 
 showSnackBar(
   BuildContext context, {
-  @required String title,
-  Color color,
+  required String title,
+  Color? color,
   int milliseconds = 1000,
-  TextStyle style,
+  TextStyle? style,
 }) {
   ScaffoldMessenger.of(context).showSnackBar(
     new SnackBar(
